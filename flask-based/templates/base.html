@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Rock, Paper, Scissors!</title>
+    <style>
+        div {
+            background-color: lightgrey;
+            border: 1px solid black;
+            padding: 25px;
+            margin: 25px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 24pt;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="{{ url_for('index') }}">Home</a>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
