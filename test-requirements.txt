@@ -1,2 +1,5 @@
+ansible>=2.1.0.0
+flake8>=3.2.1
 pytest==3.0.3
 pytest-flask==0.10.0
+requests==2.11.1

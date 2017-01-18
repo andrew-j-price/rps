@@ -1,0 +1,26 @@
+---
+
+- name: Build image
+  docker_image:
+    name: '{{ image_name }}'
+    tag: '{{ app_version }}'
+    path: .
+    api_version: auto
+    state: present
+    force: yes
+
+- name: Run container
+  docker_container:
+    name: '{{ image_name }}_testing'
+    image: '{{ image_name }}:{{ app_version }}'
+    state: started
+    restart: yes
+    restart_policy: always
+    api_version: auto
+    ports:
+      - 5000:5000
+
+- pause: seconds=1
+
+- name: Run validation
+  script: validate.py

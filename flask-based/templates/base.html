@@ -14,6 +14,7 @@
             text-decoration: none;
             color: black;
             font-size: 24pt;
+            padding: 0px 10px;
         }
         a:hover {
             text-decoration: underline;
@@ -24,6 +25,7 @@
 <body>
     <div>
         <a href="{{ url_for('index') }}">Home</a>
+        <a target="_blank" href="https://github.com/andrew-j-price/rps">GitHub</a>
         {% block content %}
         {% endblock %}
     </div>

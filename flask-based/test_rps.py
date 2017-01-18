@@ -1,4 +1,4 @@
-from app import RPS
+from rps import RPS
 rps = RPS()
 
 
