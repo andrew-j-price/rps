@@ -1,0 +1,6 @@
+PORTS = -p 5000:5000
+
+VOLUMES = -v /var/log/docker:/var/log
+
+ENV = \
+  -e SOME_KEY=SOME_VALUE

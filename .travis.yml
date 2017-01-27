@@ -6,15 +6,13 @@ python:
   - "2.7"
 install:
   - pip install -r requirements.txt
-  - pip install -r test-requirements.txt
+  - pip install -r test_requirements.txt
   - docker build -t test_container .
   - docker run -d -p 127.0.0.1:5000:5000 --name test_container test_container
 script:
   - ansible-playbook deploy.yml --syntax-check
-  - flake8 text-based/app.py
-  - flake8 flask-based/app.py
-  - flake8 flask-based/rps.py
-  - pytest text-based/test_app.py
-  - pytest flask-based/test_app.py
-  - pytest flask-based/test_rps.py
+  - flake8 flask_based/*
+  - flake8 text_based/app.py
+  - pytest flask_based/
+  - pytest text_based/test_app.py
   - python roles/deploy/files/validate.py

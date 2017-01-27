@@ -9,7 +9,7 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 
 # Copy app
-COPY flask-based /flask/
+COPY flask_based /flask/
 
 EXPOSE  5000
 CMD ["python", "/flask/app.py"]

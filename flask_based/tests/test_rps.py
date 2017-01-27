@@ -1,4 +1,4 @@
-from rps import RPS
+from flask_based.rps import RPS
 rps = RPS()
 
 
